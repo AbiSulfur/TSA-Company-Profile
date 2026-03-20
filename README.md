@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TSA Company Profile
 
-## Getting Started
+This is a premium, modern, and multilingual Next.js web application built for **Tricatha Sempiternal Asia (TSA)**. It utilizes React, TailwindCSS, and Framer Motion to deliver a stunning and functional user experience.
 
-First, run the development server:
+## ✨ Key Features Developed
+
+Here are the major feature additions and structural updates that have been implemented into the project:
+
+- **Full Multilingual Support (EN / ID)**: 
+  A custom, Context-based built-in i18n implementation (`/i18n/LanguageContext.tsx`) that persists the user's language preferences via `localStorage`. It translates content seamlessly and instantly via `t()` lookups mapped to comprehensive datasets in `i18n/dictionaries.ts`, avoiding unnecessary URL routing parameters for SEO safety.
+  
+- **Hierarchical Dropdown Navigation System**: 
+  A deeply dynamic, completely responsive Header. It features robust nested multi-level Dropdown menus natively equipped with hover states for Desktop, and smooth animated Accordion sub-menus for Mobile users (covering complex logic like distinct tracking for Business Groups, Brands, and Career paths).
+  
+- **Dynamic Modular File Structure**: 
+  Deprecated, rigid flat pages (`/about-us`, `/services`) were purged and replaced by a scalable 13-page nested structure matching the company's real-life divisions (e.g. `/business-group/event-organizer`, `/brands/dna-studio`). 
+  These dynamically generated routes are bootstrapped by a highly reusable, beautifully styled `GenericPageLayout` component.
+  
+- **Responsive Micro-Animations**: 
+  Integrated `framer-motion` to power scroll-reveals, seamless layout transitions, interactive carousels, and engaging hover effects across the entire platform.
+
+- **EmailJS Form System**: 
+  A fully integrated contact and survey form methodology utilizing `react-hook-form` to execute frontend client-side validation and securely transmit submission data directly to company inboxes using EmailJS.
+
+## 📁 Core Directory Structure
+
+- `/app`: The Next.js 14+ App Router directory. Contains the dynamic routing structure, centralized layouts, and page definitions.
+- `/components`: A repository of reusable, modular UI logic (`Header`, `Footer`, `Button`, `SectionWrapper`, `GenericPageLayout`).
+- `/i18n`: Houses the centralized language dictionaries and the global `LanguageProvider` wrapper.
+- `/public`: Static assets, brand logos, Team profile shoots, and hero carousel banners.
+
+## 🚀 Getting Started
+
+First, install the required packages:
+
+```bash
+npm install
+```
+
+Start the development server with live Fast Refresh:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build the application to test production optimizations and routing bounds:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Open [http://localhost:3000](http://localhost:3000) with your browser to experience the result.
